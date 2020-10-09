@@ -1,0 +1,26 @@
+.. VHS Python documentation master file, created by
+   sphinx-quickstart on Tue Oct  6 09:52:29 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Grundkurs: Programmierung mit Python
+======================================
+
+Willkommen zum VHS Grundkurs zum Programmieren und Python. Ich wünsche ihnen allen viel Spaß!
+Sollten sie einmal Probleme haben zu folgen (ich kann manchmal sehr schnell sein), bitte
+zögern sie nicht sich sofort zu melden.
+
+**Aufgrund von Corona**: Wir werden jede Stunde eine 10 minütige Pause machen, inkl. Lüften.
+Zusätzlich stehen ihnen Desinfektionstücher zur Verfügung. Bitte wischen sie damit Maus
+und Tastatur ab. Vielen Dank!
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Inhalt:
+
+   about_class
+   about_python
+   computer
+   installing
+   repl
+   datatypes

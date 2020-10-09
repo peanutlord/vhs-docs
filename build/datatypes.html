@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datentypen &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="Interaktiver Modus" href="repl.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="repl.html" title="Interaktiver Modus"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Datentypen</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="datentypen">
+<span id="data-types"></span><h1>Datentypen<a class="headerlink" href="#datentypen" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Pythons Typesystem nennt sich „Duck Typing“:</p>
+<blockquote>
+<div><p>“When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.”</p>
+<p>„Wenn ich einen Vogel sehe, der wie eine Ente läuft, wie eine Ente schwimmt und wie eine Ente schnattert, dann nenne ich diesen Vogel eine Ente.“</p>
+<p class="attribution">—James Whitcomb Rileys</p>
+</div></blockquote>
+<p>Wenn ich das erste Mal eine Variable einen Wert zuweise, erhält sie diesen Typen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">something</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Folgende primitive Datentypen existieren in Python:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Datentyp</p></th>
+<th class="head"><p>Mögliche Werte</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>NoneType</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Integer (Ganze Zahl)</p></td>
+<td><p>-2147483648 bis 2147483647</p></td>
+</tr>
+<tr class="row-odd"><td><p>Float (Gleitkomma)</p></td>
+<td><p>250738585072014e-308 1.7976931348623157e+308</p></td>
+</tr>
+<tr class="row-even"><td><p>String (Zeichenkette)</p></td>
+<td><p>„Hello World“, „12345“</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boolean</p></td>
+<td><p>True, False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Es besteht die Möglichkeit einen Typen in einen anderen zu verwandeln (engl. casting):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_str</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a_str</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a_int</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a_int</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">truthy</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">truthy</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a_int</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a_int</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p><strong>Hinweis</strong> Nicht jeder Typ ist mit jedem kompatibel. Ich kann einen String mit <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code> nicht (ohne Umwege) in eine Ganzzahl verwandeln:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">something</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: &#39;Hello World&#39;</span>
+</pre></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="repl.html"
+                        title="vorheriges Kapitel">Interaktiver Modus</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/datatypes.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="repl.html" title="Interaktiver Modus"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Datentypen</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

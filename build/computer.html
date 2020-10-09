@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Der Computer &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Arbeitsumgebung vorbereiten" href="installing.html" />
+    <link rel="prev" title="Über Python" href="about_python.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Arbeitsumgebung vorbereiten"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="about_python.html" title="Über Python"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Der Computer</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="der-computer">
+<span id="the-computer"></span><h1>Der Computer<a class="headerlink" href="#der-computer" title="Link zu dieser Überschrift">¶</a></h1>
+<ul class="simple">
+<li><p>Eine Rechenanlage, die sequentiell Befehle abarbeitet</p></li>
+<li><p>Ein Betriebssystem hat mehrere „Schichten“. Höhere Schichten sind weiter weg von der Hardware. Zur Kommunikation mit der Hardware müssen die Befehle also nach unten durchgereicht werden</p>
+<ul>
+<li><p>Python arbeitet auf den höcheren Schichten. Das erklärt auch warum es langsamer ist - es gibt mehr „handoffs“ an andere</p></li>
+</ul>
+</li>
+<li><p>Es gibt Hardwarenahe Sprachen, zum Bsp Assembly, und Hardwareferne Sprachen, wie C/C++, Rust, Java. Auch Python zählt zu letzerem</p></li>
+</ul>
+<p>Beispiel für ein <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> in <code class="docutils literal notranslate"><span class="pre">ASM</span></code></p>
+<div class="highlight-nasm notranslate"><div class="highlight"><pre><span></span><span class="c1">; Befehl zum Assemblen: nasm -felf hello.s</span>
+<span class="c1">;                  &amp;&amp; ld -o hello hello.o</span>
+    <span class="k">section </span><span class="nv">data</span>
+<span class="nf">hello</span> <span class="nv">db</span>  <span class="s">&quot;Hello World!&quot;</span><span class="p">,</span><span class="mh">0xa</span>
+<span class="no">len</span><span class="kd">   equ</span> <span class="kc">$</span><span class="o">-</span><span class="nv">hello</span>
+
+    <span class="k">section </span><span class="nv">text</span>
+    <span class="k">global  </span><span class="nv">_start</span>
+<span class="nl">_start:</span>
+    <span class="nf">mov</span> <span class="nb">eax</span><span class="p">,</span> <span class="mi">4</span> <span class="c1">; write(stdout, hello, len)</span>
+    <span class="nf">mov</span> <span class="nb">ebx</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="nf">mov</span> <span class="nb">ecx</span><span class="p">,</span> <span class="nv">hello</span>
+    <span class="nf">mov</span> <span class="nb">edx</span><span class="p">,</span> <span class="nv">len</span>
+    <span class="nf">int</span> <span class="mh">80h</span>
+
+    <span class="nf">mov</span> <span class="nb">eax</span><span class="p">,</span> <span class="mi">1</span> <span class="c1">; exit(0)</span>
+    <span class="nf">mov</span> <span class="nb">ebx</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="nf">int</span> <span class="mh">80h</span>
+</pre></div>
+</div>
+<p>Das Gleiche in Java</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span>
+<span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Und in Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="about_python.html"
+                        title="vorheriges Kapitel">Über Python</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="installing.html"
+                        title="nächstes Kapitel">Arbeitsumgebung vorbereiten</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/computer.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Arbeitsumgebung vorbereiten"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="about_python.html" title="Über Python"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Der Computer</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

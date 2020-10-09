@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interaktiver Modus &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="Arbeitsumgebung vorbereiten" href="installing.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Arbeitsumgebung vorbereiten"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaktiver Modus</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interaktiver-modus">
+<span id="repl"></span><h1>Interaktiver Modus<a class="headerlink" href="#interaktiver-modus" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="repl-starten">
+<h2>REPL starten<a class="headerlink" href="#repl-starten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Python benutzt einen Interaktiven Modus, auch „REPL“ genannt:</p>
+<ul class="simple">
+<li><p><strong>R</strong> ead (Lesen)</p></li>
+<li><p><strong>E</strong> valuate (Evaluieren)</p></li>
+<li><p><strong>P</strong> rint (Ausgeben)</p></li>
+<li><p><strong>L</strong> oop (Schleife)</p></li>
+</ul>
+<p>Dieser Modus eignet sich besonders um schnelle Dinge „auszuprobieren“. Wir werden
+ihn benutzen, um erste Konzepte auszuprobieren.</p>
+<p>Dazu öffnen wir die Windows Konsole und tippen <code class="docutils literal notranslate"><span class="pre">python</span></code>. Folgendes dürfte erscheinen:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7tvmb293:~ christopher.marchfel$ python
+Python <span class="m">3</span>.8.1 <span class="o">(</span>default, Mar <span class="m">13</span> <span class="m">2020</span>, <span class="m">18</span>:48:53<span class="o">)</span>
+<span class="o">[</span>Clang <span class="m">11</span>.0.0 <span class="o">(</span>clang-1100.0.33.17<span class="o">)]</span> on darwin
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="kommentare">
+<h2>Kommentare<a class="headerlink" href="#kommentare" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Kommentare sind Zeichen, die von Python ignoriert werden. Sie beginnen mit <code class="docutils literal notranslate"><span class="pre">#</span></code> und gelten ab dem Zeichen bis zur Ende der Zeile.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># I want to print something</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;How are you?&quot;</span><span class="p">)</span>  <span class="c1"># I will also be ignored!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="erste-rechnungen">
+<h2>Erste Rechnungen<a class="headerlink" href="#erste-rechnungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir können die REPL sofort als Taschenrechner benutzen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span>
+<span class="go">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">8</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="go">1.6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># Potenz</span>
+<span class="go">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">25</span> <span class="o">%</span> <span class="mi">5</span>  <span class="c1"># Modulo</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variablen">
+<h2>Variablen<a class="headerlink" href="#variablen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Ergebnisse werden einfach nur gedruckt. Wir können diese jedoch auch zwischenspeichern zur weiteren Verarbeitung. Dafür weisen wir den Wert einer s.g. Variable zu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">some_number</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">height</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+<span class="go">900</span>
+</pre></div>
+</div>
+<p>Ist eine Variable nicht definiert (d.h. ihr wurde keinen Wert zugewiesen), erzeugt ihre Benutzung ein Fehler:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;n&#39; is not defined</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="zeichenketten">
+<h2>Zeichenketten<a class="headerlink" href="#zeichenketten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zeichenketten sind eine Abfolge von Zeichen (engl. characters, chars).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="go">&#39;Hello World&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>  <span class="c1"># Note &#39;</span>
+<span class="go">&#39;Hello World&#39;</span>
+</pre></div>
+</div>
+<p>Zeichenketten werden von <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> oder <code class="docutils literal notranslate"><span class="pre">'</span></code> eingeschlossen. Möchten wir diese Zeichen innerhalb einer Zeichenkette verwenden, müssen diese vorher escaped werden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let&#39;s use a </span><span class="se">\&quot;</span><span class="s2"> in our test&quot;</span><span class="p">)</span>
+<span class="go">Let&#39;s use a &quot; in our test</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And Hamlet spoke </span><span class="se">\&quot;</span><span class="s2">To be, or not to be, that is the question</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">And Hamlet spoke &quot;To be, or not to be, that is the question&quot;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">\</span></code> kann durch <code class="docutils literal notranslate"><span class="pre">\\</span></code> benutzt werden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">&#39;\&#39;</span>
+</pre></div>
+</div>
+<p>Bestimmte escape Zeichen werden benutzt um die Darstellung des Textes zu beeinflussen. Hier ist eine unvollständige Auflistung:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\'</span></code> - escape <code class="docutils literal notranslate"><span class="pre">'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> - escape <code class="docutils literal notranslate"><span class="pre">&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\\</span></code> - escape <code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> - newline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r\n</span></code> - newline carriage return (Windows)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> - tab</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code> - backspace</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\0</span></code> - 0 terminator (C/C++)</p></li>
+</ul>
+<p>Um einen Zeilenumbruch zu erzeugen, müssen wir das escape Zeichen <code class="docutils literal notranslate"><span class="pre">\n</span></code> benutzen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World&quot;</span><span class="p">)</span>
+<span class="go">Hello</span>
+<span class="go">World</span>
+</pre></div>
+</div>
+<p>Um alle escape Zeichen zu „deaktivieren“ kann in Python ein s.g. „Raw String“ erzeugt werden. Dieser zeichnet sich durch ein <code class="docutils literal notranslate"><span class="pre">r</span></code> vor den <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> aus.
+<strong>Hinweis</strong>: Die REPL benutzt Raw Strings, daher muss man <code class="docutils literal notranslate"><span class="pre">print</span></code> benutzen um die Wirkung der escape Zeichen zu sehen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Hello\nWorld&quot;</span><span class="p">)</span>
+<span class="go">Hello\nWorld</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World&quot;</span>
+<span class="go">Hello\nWorld</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\n</span><span class="s2">World&quot;</span><span class="p">)</span>
+<span class="go">Hello</span>
+<span class="go">World</span>
+</pre></div>
+</div>
+<p>Ich kann mehrere <code class="docutils literal notranslate"><span class="pre">\n</span></code> sehr einfach durch einen s.g. Multiline String abbilden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="s2">  Hello,</span>
+<span class="gp">... </span><span class="s2">  I am a very long string with a lot of newlines.</span>
+<span class="gp">... </span><span class="s2">  Don&#39;t believe me?</span>
+<span class="gp">... </span><span class="s2">  What are you reading right now?</span>
+<span class="gp">... </span><span class="s2">  &quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">some_string</span><span class="p">)</span>
+
+<span class="go">  Hello,</span>
+<span class="go">  I am a very long string with a lot of newlines.</span>
+<span class="go">  Don&#39;t believe me?</span>
+<span class="go">  What are you reading right now?</span>
+</pre></div>
+</div>
+<p><strong>Hinweis</strong> <code class="docutils literal notranslate"><span class="pre">0</span></code> und <code class="docutils literal notranslate"><span class="pre">&quot;0&quot;</span></code> sind <strong>nicht</strong> das Gleiche! Das erste ist eine Ganzzahl, das andere eine Zeichenkette bzw. String</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhaltsverzeichnis</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Interaktiver Modus</a><ul>
+<li><a class="reference internal" href="#repl-starten">REPL starten</a></li>
+<li><a class="reference internal" href="#kommentare">Kommentare</a></li>
+<li><a class="reference internal" href="#erste-rechnungen">Erste Rechnungen</a></li>
+<li><a class="reference internal" href="#variablen">Variablen</a></li>
+<li><a class="reference internal" href="#zeichenketten">Zeichenketten</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="installing.html"
+                        title="vorheriges Kapitel">Arbeitsumgebung vorbereiten</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/repl.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Arbeitsumgebung vorbereiten"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaktiver Modus</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
