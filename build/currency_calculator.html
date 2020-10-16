@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Währungsrechner &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="Datentypen" href="datatypes.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="datatypes.html" title="Datentypen"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Währungsrechner</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wahrungsrechner">
+<h1>Währungsrechner<a class="headerlink" href="#wahrungsrechner" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="aufgabe">
+<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Programmieren Sie einen Währungsrechner der Euro nach bulgarische Leva umrechnet. Sie benötigen dafür nur die bisher kennengelernten Befehle.</p>
+<p>1€ entspricht dabei 1,95583 BGN.</p>
+</div>
+<div class="section" id="tipps">
+<h2>Tipps<a class="headerlink" href="#tipps" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Folgende Funktionen werden benötigt:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code></p></li>
+<li><p>In Python werden Fließkommazahl mit <code class="docutils literal notranslate"><span class="pre">.</span></code> geschrieben, nicht mit <code class="docutils literal notranslate"><span class="pre">,</span></code> (zum Bsp. <code class="docutils literal notranslate"><span class="pre">1.1</span></code>)</p></li>
+</ul>
+</div>
+<div class="section" id="losung">
+<h2>Lösung<a class="headerlink" href="#losung" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="mf">1.95583</span>
+<span class="n">euro</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wie viel Euro wollen Sie in BGN umrechnen? &quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">euro</span><span class="p">,</span> <span class="s2">&quot;€ entsprechen&quot;</span><span class="p">,</span> <span class="n">euro</span> <span class="o">*</span> <span class="n">quote</span><span class="p">,</span> <span class="s2">&quot;BGN&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhaltsverzeichnis</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Währungsrechner</a><ul>
+<li><a class="reference internal" href="#aufgabe">Aufgabe</a></li>
+<li><a class="reference internal" href="#tipps">Tipps</a></li>
+<li><a class="reference internal" href="#losung">Lösung</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="datatypes.html"
+                        title="vorheriges Kapitel">Datentypen</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/currency_calculator.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="datatypes.html" title="Datentypen"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Währungsrechner</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

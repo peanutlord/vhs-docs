@@ -24,3 +24,7 @@ und Tastatur ab. Vielen Dank!
    installing
    repl
    datatypes
+   currency_calculator_task
+   currency_calculator_solution
+   lists
+   control_flow

@@ -1,0 +1,31 @@
+.. Currency Calculator:
+
+Währungsrechner
+===============
+
+Aufgabe
+-------
+
+Programmieren Sie einen Währungsrechner der Euro nach bulgarische Leva umrechnet. Sie benötigen dafür nur die bisher kennengelernten Befehle.
+
+1€ entspricht dabei 1,95583 BGN.
+
+Tipps
+-----
+
+Folgende Funktionen werden benötigt:
+
+* ``input``
+* ``int``
+* ``print``
+* In Python werden Fließkommazahl mit ``.`` geschrieben, nicht mit ``,`` (zum Bsp. ``1.1``)
+
+Lösung
+------
+
+.. code-block:: python
+
+  quote = 1.95583
+  euro = int(input("Wie viel Euro wollen Sie in BGN umrechnen? "))
+
+  print(euro, "€ entsprechen", euro * quote, "BGN")
