@@ -28,3 +28,4 @@ und Tastatur ab. Vielen Dank!
    currency_calculator_solution
    lists
    control_flow
+   functions

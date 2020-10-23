@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funktionen &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="Kontrollfluss" href="control_flow.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="control_flow.html" title="Kontrollfluss"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Funktionen</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="funktionen">
+<span id="defining-functions"></span><h1>Funktionen<a class="headerlink" href="#funktionen" title="Link zu dieser Überschrift">¶</a></h1>
+<blockquote>
+<div><p>Don’t repeat yourself (DRY)</p>
+</div></blockquote>
+<p>Wie in einem guten Buch, sollte die gewünschte Information genau einmal auftauchen und nicht x Mal an x Stellen (gilt auch für Romane).
+Besonders in der Programmierung ist das Wichtig. Wenn ich das Verhalten der Software ändern möchte, sollte ich genau einen Ort
+anpassen müssen und nicht viele verschiedene Stellen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I was called&quot;</span><span class="p">)</span>
+
+<span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Funktionen können natürlich beliebig oft gerufen werden:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">do_something</span><span class="p">()</span>
+<span class="n">do_something</span><span class="p">()</span>
+<span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Funktionen können auch Ergebnisse an den Aufrufer zurückliefern. Diese können in Variablen gespeichert werden oder direkt an andere Funktionen weitergereicht werden, wie zum Bsp. <code class="docutils literal notranslate"><span class="pre">print</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hoooray! I did something&quot;</span>
+
+<span class="n">something</span> <span class="o">=</span> <span class="n">do_something</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">something</span><span class="p">)</span>
+
+<span class="c1"># Or...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">do_something</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Funktionen können auch von außen s.g. „Argumente“ erhalten um ihre Arbeit zu verrichten. Wir haben bereits solche Funktionen kennengelernt (zum Bsp. <code class="docutils literal notranslate"><span class="pre">range</span></code>).
+Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie diese aufgelistet sind:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aber auch hier gibt es die berühmte Ausnahme. Durch Angabe des Namens können wir Argumente in beliebiger Reihenfolge adressen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Funktionen können auch Variablen, die sich außerhalb befinden, „sehen“ (Stichwort: Scoping). Wir können diese aber nicht (ohne Umwege) verändern.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EXP</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="n">EXP</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Wir können die Argumente einer Funktion auch bereits mit Standardwerten belegen, die wir dann nicht immer übergeben müssen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">**</span> <span class="n">exp</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ask_ok</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">reminder</span><span class="o">=</span><span class="s2">&quot;Please try again&quot;</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ok</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;ok&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">ok</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;nop&quot;</span><span class="p">,</span> <span class="s2">&quot;nope&quot;</span><span class="p">,</span> <span class="s2">&quot;not ok&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">retries</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Retries exhausted&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">reminder</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ein <code class="docutils literal notranslate"><span class="pre">return</span></code> beendet <strong>immer</strong> eine Funktion, egal an welcher Stelle (auch innerhalb von Endlosschleifen)</p>
+<p>Wir können unseren Währungsrechner so umschreiben, dass verschiedene Währungen unterstützt mithilfe eines dictionaries (<code class="docutils literal notranslate"><span class="pre">dict</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python dictionary, represented by key --&gt; value</span>
+<span class="n">currencies</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;BGN&quot;</span><span class="p">:</span> <span class="mf">1.95583</span><span class="p">,</span>
+    <span class="s2">&quot;US&quot;</span><span class="p">:</span> <span class="mf">1.18478</span><span class="p">,</span>
+    <span class="s2">&quot;YEN&quot;</span><span class="p">:</span> <span class="mf">123.72</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">exchange</span><span class="p">(</span><span class="n">currency</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">currency</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">currencies</span><span class="p">:</span>
+        <span class="c1"># raise ValueError(f&quot;Unknown currency {currency}&quot;)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">quote</span> <span class="o">=</span> <span class="n">currencies</span><span class="p">[</span><span class="n">currency</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">quote</span> <span class="o">*</span> <span class="n">amount</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">exchange</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exchange</span><span class="p">(</span><span class="s2">&quot;BGN&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exchange</span><span class="p">(</span><span class="s2">&quot;YEN&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Funktionen können auch sich selbst aufrufen (rekursiver aufruf):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="c1"># 0</span>
+<span class="c1"># 1</span>
+<span class="c1"># 1</span>
+<span class="c1"># 2</span>
+<span class="c1"># 3</span>
+<span class="c1"># 5</span>
+<span class="c1"># 8</span>
+<span class="c1"># 13</span>
+<span class="c1"># 21</span>
+<span class="c1"># 34</span>
+</pre></div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="control_flow.html"
+                        title="vorheriges Kapitel">Kontrollfluss</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/functions.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="control_flow.html" title="Kontrollfluss"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Funktionen</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

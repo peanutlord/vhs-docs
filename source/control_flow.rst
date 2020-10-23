@@ -129,7 +129,9 @@ Um den Schlüssel (engl. key oder index) einer Liste zu erhalten, gibt es zwei W
     for i in len(some_items):
         print(i, some_items[i])
 
-**Hinweis**: Diese Art, um an den Schlüssel zu kommen, ist nicht sehr "Pythonic". Es gibt elegantere Wege (gerne mehr auf Nachfrage)
+**Hinweis**: Diese Art, um an den Schlüssel zu kommen, ist nicht sehr "Pythonic". Es gibt elegantere Wege. Gerne mehr auf Nachfrage
+
+**Hinweis**: Wenn man nur eine neue Liste erzeugen möchte, bietet sich eine s.g. List comprehension an. Gerne mehr auf Nachfrage.
 
 FizzBuzz
 --------
@@ -201,22 +203,74 @@ Wahrheitstabelle
 ------------------
 
 Neben der ``for`` Schleife, welches jedes Elemente einer Liste durchläuft, existiert in Python noch eine zweite Art von Schleife: die ``while``.
-Der Unterschied besteht darin, dass ``while`` so lange "läuft" solange eine Aussage "Wahr" ist (Python ``True``):
+Der Unterschied besteht darin, dass ``while`` so lange "läuft" wie eine Aussage "Wahr" ist (Python ``True``):
 
 .. code-block:: python
 
     while True:
-        print("I am running endless!")
+        print("I am running endless! Please press CTRL+C to exit")
+
+**Wichtig** Innerhalb einer Endlosschleife müssen wir (in 99.99% der Fälle) eine Bedinging einbauen, die die Schleife beendet.
+Es gibt (wenige) Ausnahmen wo dies nicht der Fall ist, zum Bsp. in einem Betriebssystem. Dort befindet sich der untersten Ebene
+eine Schleife, die sich nie beendet (``while True``).
 
 .. code-block:: python
 
     n = 0
     while n < 10:
-        n = n + 1
         print(n)
+        n = n + 1
+
+Leere Elemente gelten als ``False`` (``None``, ``""``, ``[]``):
 
 .. code-block:: python
 
     items = ["red", "green", "blue"]
     while items:
         print(items.pop())
+
+
+``break`` und ``continue``
+--------------------------
+
+Wir haben die Möglichkeit Schleifen noch etwas detaillierter zu steuern. Mit ``break`` brechen wir aus einer Schleife auf:
+
+.. code-block:: python
+
+   n = 0
+   while True:
+      print(n)
+      n = n + 1
+
+      if n >= 10:
+         break
+
+.. code-block:: python
+
+   import time
+
+   times = [
+       1577865600,  # 01/01/2020 @ 8:00am (UTC)
+       1592233440,  # 06/15/2020 @ 3:04pm (UTC)
+       1608840000,  # 12/24/2020 @ 8:00pm (UTC)
+       1609459199   # 12/31/2020 @ 11:59pm (UTC)
+   ]
+
+   current_timestamp = int(time.time())
+   for timestamp in times:
+       if timestamp > current_timestamp:
+           current_timestamp = timestamp
+           break
+
+   print(current_timestamp)  # 1608840000
+
+``continue`` ermöglicht uns sofort mit der nächsten Iteration zu beginnen:
+
+.. code-block:: python
+
+   for num in range(2, 100):
+      if num % 2 == 0:
+         print("Found an even number", num)
+         continue
+
+      print("Found an odd number", num)

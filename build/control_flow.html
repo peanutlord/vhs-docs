@@ -19,6 +19,7 @@
     
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Funktionen" href="functions.html" />
     <link rel="prev" title="Listen" href="lists.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,6 +28,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Stichwortverzeichnis"
              accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Funktionen"
+             accesskey="N">weiter</a> |</li>
         <li class="right" >
           <a href="lists.html" title="Listen"
              accesskey="P">zurück</a> |</li>
@@ -163,7 +167,8 @@ Mehr dazu gerne auf Nachfrage.</p>
 </pre></div>
 </div>
 </div>
-<p><strong>Hinweis</strong>: Diese Art, um an den Schlüssel zu kommen, ist nicht sehr „Pythonic“. Es gibt elegantere Wege (gerne mehr auf Nachfrage)</p>
+<p><strong>Hinweis</strong>: Diese Art, um an den Schlüssel zu kommen, ist nicht sehr „Pythonic“. Es gibt elegantere Wege. Gerne mehr auf Nachfrage</p>
+<p><strong>Hinweis</strong>: Wenn man nur eine neue Liste erzeugen möchte, bietet sich eine s.g. List comprehension an. Gerne mehr auf Nachfrage.</p>
 </div>
 <div class="section" id="fizzbuzz">
 <h2>FizzBuzz<a class="headerlink" href="#fizzbuzz" title="Link zu dieser Überschrift">¶</a></h2>
@@ -267,20 +272,64 @@ Ein Spieler oder eine Spielerin, die über 55 ist und ein Handicap größer als 
 <div class="section" id="while-schleife">
 <h2><code class="docutils literal notranslate"><span class="pre">while</span></code> Schleife<a class="headerlink" href="#while-schleife" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Neben der <code class="docutils literal notranslate"><span class="pre">for</span></code> Schleife, welches jedes Elemente einer Liste durchläuft, existiert in Python noch eine zweite Art von Schleife: die <code class="docutils literal notranslate"><span class="pre">while</span></code>.
-Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><span class="pre">while</span></code> so lange „läuft“ solange eine Aussage „Wahr“ ist (Python <code class="docutils literal notranslate"><span class="pre">True</span></code>):</p>
+Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><span class="pre">while</span></code> so lange „läuft“ wie eine Aussage „Wahr“ ist (Python <code class="docutils literal notranslate"><span class="pre">True</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am running endless!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am running endless! Please press CTRL+C to exit&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Wichtig</strong> Innerhalb einer Endlosschleife müssen wir (in 99.99% der Fälle) eine Bedinging einbauen, die die Schleife beendet.
+Es gibt (wenige) Ausnahmen wo dies nicht der Fall ist, zum Bsp. in einem Betriebssystem. Dort befindet sich der untersten Ebene
+eine Schleife, die sich nie beendet (<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
+<p>Leere Elemente gelten als <code class="docutils literal notranslate"><span class="pre">False</span></code> (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 <span class="k">while</span> <span class="n">items</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break-und-continue">
+<h2><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-und-continue" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir haben die Möglichkeit Schleifen noch etwas detaillierter zu steuern. Mit <code class="docutils literal notranslate"><span class="pre">break</span></code> brechen wir aus einer Schleife auf:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+   <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1577865600</span><span class="p">,</span>  <span class="c1"># 01/01/2020 @ 8:00am (UTC)</span>
+    <span class="mi">1592233440</span><span class="p">,</span>  <span class="c1"># 06/15/2020 @ 3:04pm (UTC)</span>
+    <span class="mi">1608840000</span><span class="p">,</span>  <span class="c1"># 12/24/2020 @ 8:00pm (UTC)</span>
+    <span class="mi">1609459199</span>   <span class="c1"># 12/31/2020 @ 11:59pm (UTC)</span>
+<span class="p">]</span>
+
+<span class="n">current_timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">timestamp</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">timestamp</span> <span class="o">&gt;</span> <span class="n">current_timestamp</span><span class="p">:</span>
+        <span class="n">current_timestamp</span> <span class="o">=</span> <span class="n">timestamp</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">current_timestamp</span><span class="p">)</span>  <span class="c1"># 1608840000</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> ermöglicht uns sofort mit der nächsten Iteration zu beginnen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found an even number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+      <span class="k">continue</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found an odd number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -305,6 +354,7 @@ Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><
 </ul>
 </li>
 <li><a class="reference internal" href="#while-schleife"><code class="docutils literal notranslate"><span class="pre">while</span></code> Schleife</a></li>
+<li><a class="reference internal" href="#break-und-continue"><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -312,6 +362,9 @@ Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><
   <h4>Vorheriges Thema</h4>
   <p class="topless"><a href="lists.html"
                         title="vorheriges Kapitel">Listen</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="functions.html"
+                        title="nächstes Kapitel">Funktionen</a></p>
   <div role="note" aria-label="source link">
     <h3>Diese Seite</h3>
     <ul class="this-page-menu">
@@ -339,6 +392,9 @@ Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Stichwortverzeichnis"
              >Index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Funktionen"
+             >weiter</a> |</li>
         <li class="right" >
           <a href="lists.html" title="Listen"
              >zurück</a> |</li>
