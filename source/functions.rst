@@ -146,4 +146,48 @@ Packing und Unpacking
 ---------------------
 
 Argumente müssen in der gleichen Anzahl und (wenn nicht der ``name`` benutzt wird) in der gleichen Reihenfolge angegeben werden.
-Es gibt jedoch die Möglichkeit
+Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlauben will, unendlich viele Argumente zu übergeben:
+
+.. code-block:: python
+
+    def add_all(*nums):
+        return sum(nums)
+
+    add_all(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+Man kann dies auch mit normalen Argumenten kombinieren:
+
+.. code-block:: python
+
+    def write_all(file, sep="\n", *lines):
+        with open(file, "w") as f:
+            f.write(sep.join(lines))
+
+    write_all("foo.txt", "\n", "foo", "bar", "baz")
+
+Die gleiche funktionalität gibt es mit Keyword Argumenten (Angabe des Namens + Wert):
+
+.. code-block:: python
+
+    def something(arg, **kwargs):
+        print(kwargs)
+
+    do_something("something", foo=bar, phrase="Hello World")
+
+Oft findet man dieses Muster in Python code:
+
+.. code-block:: python
+
+    def something(a, b, *args, **kwargs):
+        pass
+
+Das ganze funktioniert auch in die "andere Richtung":
+
+.. code-block:: python
+
+    for i in range(0, 10):
+        print(i)
+
+    args = [0, 10]
+    for i in range(*args):
+        print(i)

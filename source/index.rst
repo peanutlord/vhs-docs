@@ -29,3 +29,5 @@ und Tastatur ab. Vielen Dank!
    lists
    control_flow
    functions
+   errors
+   reco

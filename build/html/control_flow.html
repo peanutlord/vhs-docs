@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontrollfluss &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Funktionen" href="functions.html" />
+    <link rel="prev" title="Listen" href="lists.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Funktionen"
+             accesskey="N">weiter</a> |</li>
+        <li class="right" >
+          <a href="lists.html" title="Listen"
+             accesskey="P">zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Kontrollfluss</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="kontrollfluss">
+<span id="control-flow"></span><h1>Kontrollfluss<a class="headerlink" href="#kontrollfluss" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="if-statement">
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> Statement<a class="headerlink" href="#if-statement" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Einer der wichtigsten <code class="docutils literal notranslate"><span class="pre">keywords</span></code> zur Kontrolle des Programmflusses ist das <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Damit lässt sich der Code „branchen“ (eine Verzweigung).</p>
+<p>Ein <code class="docutils literal notranslate"><span class="pre">if</span></code> prüft eine „Aussage“ auf deren Wahrheitsgehalt. Ist das Ergebnis „Wahr“ (in Python <code class="docutils literal notranslate"><span class="pre">True</span></code>), wird der Code ausgeführt:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Simple if</span><a class="headerlink" href="#id1" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">n</span> <span class="o">=</span> <span class="mi">42</span>
+ <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">42</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You discovered the meaning of life!&quot;</span><span class="p">)</span>
+
+ <span class="c1"># You discovered the meaning of life!</span>
+</pre></div>
+</div>
+</div>
+<p>Man kann einen <code class="docutils literal notranslate"><span class="pre">else</span></code> Block hinzufügen, der nur ausgeführt wird, wenn die Aussage nicht zutrifft:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">if/else</span><a class="headerlink" href="#id2" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">n</span> <span class="o">=</span> <span class="mi">41</span>
+ <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">42</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You discovered the meaning of life!&quot;</span><span class="p">)</span>
+ <span class="k">else</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t give up, you are close - I can feel it!&quot;</span><span class="p">)</span>
+
+ <span class="c1"># You discovered the meaning of life!</span>
+</pre></div>
+</div>
+</div>
+<p>Es gibt Szenarien, in denen man mehrere Aussagen überprüfen möchte. Dies kann man durch s.g. <code class="docutils literal notranslate"><span class="pre">elif</span></code> Blöcke realisieren (<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>).
+Der erste Block, dessen Auswertung <code class="docutils literal notranslate"><span class="pre">True</span></code> ergibt „gewinnt“:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">if/elif/else</span><a class="headerlink" href="#id3" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+ <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">42</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You discovered the meaning of life!&quot;</span><span class="p">)</span>
+ <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">41</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t give up, you are close - I can feel it!&quot;</span><span class="p">)</span>
+ <span class="k">else</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are not ready yet, keep searching!&quot;</span><span class="p">)</span>
+
+ <span class="c1"># You are not ready yet, keep searching!</span>
+</pre></div>
+</div>
+</div>
+<p>Wir können auch überprüfen, ob eine Zahl kleiner oder größer ist (oder kleiner/größer gleich):</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Bigger/Smaller</span><a class="headerlink" href="#id4" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">random</span>
+
+ <span class="n">n</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+ <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bigger than 10&quot;</span><span class="p">)</span>
+ <span class="k">elif</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bigger than 1, but smaller than 10&quot;</span><span class="p">)</span>
+ <span class="k">else</span><span class="p">:</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Sorry, it&#39;s just a 1...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Nicht nur Zahlen können verglichen werden, sondern auch Zeichenketten:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Compare strings</span><a class="headerlink" href="#id5" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">something</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+ <span class="k">if</span> <span class="n">something</span> <span class="o">==</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes, hello to you too!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="taschenrechner">
+<h2>Taschenrechner<a class="headerlink" href="#taschenrechner" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Programmieren wir zusammen einen kleinen Taschenrechner. Dieser soll zu jeder Zeit nur zwei Zahlen entgegen nehmen und diese addieren, subtrahieren, multiplizieren oder dividieren.</p>
+</div>
+<div class="section" id="for-schleife">
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> Schleife<a class="headerlink" href="#for-schleife" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Auf der letzten Seite haben wir das erste Mal Listen kennengelernt. Wir haben Elemente hinzugefügt, entfernt oder subsets erstellt. Wir können jedoch auch eine Liste „durchwandern“ mithilfe einer Schleife:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">for loops</span><a class="headerlink" href="#id6" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;window&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;vhs&quot;</span><span class="p">]</span>
+ <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+
+ <span class="c1"># cat 3</span>
+ <span class="c1"># windows 6</span>
+ <span class="c1"># python 3</span>
+ <span class="c1"># vhs 3</span>
+</pre></div>
+</div>
+</div>
+<p>Der Programmcode innerhalb des <code class="docutils literal notranslate"><span class="pre">for</span></code> blocks wird <strong>nur</strong> auf ein einzelnes Elemente angewendet. Wir können auch ohne große Mühe eine Liste an Zahlen in Python erzeugen (beginnend ab 0):</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">range</span><a class="headerlink" href="#id7" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+ <span class="c1"># 0</span>
+ <span class="c1"># 1</span>
+ <span class="c1"># 2</span>
+ <span class="c1"># 3</span>
+ <span class="c1"># 4</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Hinweis</strong>: <code class="docutils literal notranslate"><span class="pre">range</span></code> „benimmt“ sich wie eine Liste, ist jedoch keine. Alle Dinge, die sich in einer Schleife benutzen lassen (selbst wenn es keine Listen sind), nennt man <code class="docutils literal notranslate"><span class="pre">iterable</span></code>.
+Mehr dazu gerne auf Nachfrage.</p>
+<p>Man kann sogar einen String in eine Schleife stecken:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">String in a loop</span><a class="headerlink" href="#id8" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Um den Schlüssel (engl. key oder index) einer Liste zu erhalten, gibt es zwei Wege:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Index of list</span><a class="headerlink" href="#id9" title="Link zu diesem Quellcode">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">some_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Where&quot;</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="s2">&quot;the&quot;</span><span class="p">,</span> <span class="s2">&quot;money&quot;</span><span class="p">,</span> <span class="s2">&quot;Lebowski&quot;</span><span class="p">]</span>
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">len</span><span class="p">(</span><span class="n">some_items</span><span class="p">):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">some_items</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Hinweis</strong>: Diese Art, um an den Schlüssel zu kommen, ist nicht sehr „Pythonic“. Es gibt elegantere Wege. Gerne mehr auf Nachfrage</p>
+<p><strong>Hinweis</strong>: Wenn man nur eine neue Liste erzeugen möchte, bietet sich eine s.g. List comprehension an. Gerne mehr auf Nachfrage.</p>
+</div>
+<div class="section" id="fizzbuzz">
+<h2>FizzBuzz<a class="headerlink" href="#fizzbuzz" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Schreiben wir ein kleines Programm namnes FizzBuzz. Dieses wird gerne in Vorstellungsgesprächen verwendet.</p>
+<p>Wir generieren eine Liste mit <code class="docutils literal notranslate"><span class="pre">n</span></code> Zahlen und durchwandern diese.
+Ist die Zahl gleichzeitig durch 5 und 3 teilbar, schreiben wir das Wort „FizzBuzz“. Ist die Zahl nur durch 5 teilbar, schreiben wir „Fizz“ und diese nur durch 3 teilbar,
+schreiben wir „Buzz“.</p>
+<p>Bei einer Liste mit 20 Zahlen, dürfte die Ausgabe wieviel aussehen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FizzBuzz</span>
+<span class="n">Buzz</span>
+<span class="n">Fizz</span>
+<span class="n">Buzz</span>
+<span class="n">Buzz</span>
+<span class="n">Fizz</span>
+<span class="n">Buzz</span>
+<span class="n">FizzBuzz</span>
+<span class="n">Buzz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="open-or-senior">
+<h2>Open or Senior<a class="headerlink" href="#open-or-senior" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Schreiben noch ein weiteres, kleines Programm. Diesmal Golf:</p>
+<p>Wir haben eine Liste von Spielern. Je nach Alter und Handicap sind diese „Senior“ oder „Open“.
+Ein Spieler oder eine Spielerin, die über 55 ist und ein Handicap größer als 7 hat, gilt als „Senior“. Andere als „Open“.</p>
+<p>Eine Liste mit folgenden Elementen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">],[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">12</span><span class="p">],[</span><span class="mi">37</span><span class="p">,</span> <span class="mi">6</span><span class="p">],[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">],[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>dürfte diese Ausgabe erzeugen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">,</span> <span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;Senior&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ran an die Tastatur!</p>
+<div class="section" id="wahrheitstabelle">
+<h3>Wahrheitstabelle<a class="headerlink" href="#wahrheitstabelle" title="Link zu dieser Überschrift">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Ergebnis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>Ergebnis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="while-schleife">
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> Schleife<a class="headerlink" href="#while-schleife" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Neben der <code class="docutils literal notranslate"><span class="pre">for</span></code> Schleife, welches jedes Elemente einer Liste durchläuft, existiert in Python noch eine zweite Art von Schleife: die <code class="docutils literal notranslate"><span class="pre">while</span></code>.
+Der Unterschied besteht darin, dass <code class="docutils literal notranslate"><span class="pre">while</span></code> so lange „läuft“ wie eine Aussage „Wahr“ ist (Python <code class="docutils literal notranslate"><span class="pre">True</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am running endless! Please press CTRL+C to exit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Wichtig</strong> Innerhalb einer Endlosschleife müssen wir (in 99.99% der Fälle) eine Bedinging einbauen, die die Schleife beendet.
+Es gibt (wenige) Ausnahmen wo dies nicht der Fall ist, zum Bsp. in einem Betriebssystem. Dort befindet sich der untersten Ebene
+eine Schleife, die sich nie beendet (<code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Leere Elemente gelten als <code class="docutils literal notranslate"><span class="pre">False</span></code> (<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">[]</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="k">while</span> <span class="n">items</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break-und-continue">
+<h2><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#break-und-continue" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir haben die Möglichkeit Schleifen noch etwas detaillierter zu steuern. Mit <code class="docutils literal notranslate"><span class="pre">break</span></code> brechen wir aus einer Schleife auf:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+   <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+      <span class="k">break</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1577865600</span><span class="p">,</span>  <span class="c1"># 01/01/2020 @ 8:00am (UTC)</span>
+    <span class="mi">1592233440</span><span class="p">,</span>  <span class="c1"># 06/15/2020 @ 3:04pm (UTC)</span>
+    <span class="mi">1608840000</span><span class="p">,</span>  <span class="c1"># 12/24/2020 @ 8:00pm (UTC)</span>
+    <span class="mi">1609459199</span>   <span class="c1"># 12/31/2020 @ 11:59pm (UTC)</span>
+<span class="p">]</span>
+
+<span class="n">current_timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">timestamp</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">timestamp</span> <span class="o">&gt;</span> <span class="n">current_timestamp</span><span class="p">:</span>
+        <span class="n">current_timestamp</span> <span class="o">=</span> <span class="n">timestamp</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">current_timestamp</span><span class="p">)</span>  <span class="c1"># 1608840000</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> ermöglicht uns sofort mit der nächsten Iteration zu beginnen:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found an even number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+      <span class="k">continue</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found an odd number&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhaltsverzeichnis</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Kontrollfluss</a><ul>
+<li><a class="reference internal" href="#if-statement"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statement</a></li>
+<li><a class="reference internal" href="#taschenrechner">Taschenrechner</a></li>
+<li><a class="reference internal" href="#for-schleife"><code class="docutils literal notranslate"><span class="pre">for</span></code> Schleife</a></li>
+<li><a class="reference internal" href="#fizzbuzz">FizzBuzz</a></li>
+<li><a class="reference internal" href="#open-or-senior">Open or Senior</a><ul>
+<li><a class="reference internal" href="#wahrheitstabelle">Wahrheitstabelle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#while-schleife"><code class="docutils literal notranslate"><span class="pre">while</span></code> Schleife</a></li>
+<li><a class="reference internal" href="#break-und-continue"><code class="docutils literal notranslate"><span class="pre">break</span></code> und <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Vorheriges Thema</h4>
+  <p class="topless"><a href="lists.html"
+                        title="vorheriges Kapitel">Listen</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="functions.html"
+                        title="nächstes Kapitel">Funktionen</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Diese Seite</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/control_flow.rst.txt"
+            rel="nofollow">Quellcode anzeigen</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Stichwortverzeichnis"
+             >Index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Funktionen"
+             >weiter</a> |</li>
+        <li class="right" >
+          <a href="lists.html" title="Listen"
+             >zurück</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Kontrollfluss</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Christopher Marchfelder.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>

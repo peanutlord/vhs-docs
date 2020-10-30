@@ -19,6 +19,7 @@
     
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Fehler" href="errors.html" />
     <link rel="prev" title="Kontrollfluss" href="control_flow.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,6 +28,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Stichwortverzeichnis"
              accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="errors.html" title="Fehler"
+             accesskey="N">weiter</a> |</li>
         <li class="right" >
           <a href="control_flow.html" title="Kontrollfluss"
              accesskey="P">zurück</a> |</li>
@@ -42,6 +46,8 @@
             
   <div class="section" id="funktionen">
 <span id="defining-functions"></span><h1>Funktionen<a class="headerlink" href="#funktionen" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="aufbau">
+<h2>Aufbau<a class="headerlink" href="#aufbau" title="Link zu dieser Überschrift">¶</a></h2>
 <blockquote>
 <div><p>Don’t repeat yourself (DRY)</p>
 </div></blockquote>
@@ -80,7 +86,7 @@ Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie die
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Aber auch hier gibt es die berühmte Ausnahme. Durch Angabe des Namens können wir Argumente in beliebiger Reihenfolge adressen:</p>
+<p>Aber auch hier gibt es die berühmte Ausnahme. Durch Angabe des Namens können wir Argumente in beliebiger Reihenfolge einsetzen:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -160,6 +166,47 @@ Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie die
 </pre></div>
 </div>
 </div>
+<div class="section" id="packing-und-unpacking">
+<h2>Packing und Unpacking<a class="headerlink" href="#packing-und-unpacking" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Argumente müssen in der gleichen Anzahl und (wenn nicht der <code class="docutils literal notranslate"><span class="pre">name</span></code> benutzt wird) in der gleichen Reihenfolge angegeben werden.
+Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlauben will, unendlich viele Argumente zu übergeben:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_all</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+
+<span class="n">add_all</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Man kann dies auch mit normalen Argumenten kombinieren:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_all</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">lines</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+
+<span class="n">write_all</span><span class="p">(</span><span class="s2">&quot;foo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;baz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Die gleiche funktionalität gibt es mit Keyword Argumenten (Angabe des Namens + Wert):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">something</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">do_something</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">,</span> <span class="n">foo</span><span class="o">=</span><span class="n">bar</span><span class="p">,</span> <span class="n">phrase</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Oft findet man dieses Muster in Python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">something</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Das ganze funktioniert auch in die „andere Richtung“:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -168,9 +215,21 @@ Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie die
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Inhaltsverzeichnis</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Funktionen</a><ul>
+<li><a class="reference internal" href="#aufbau">Aufbau</a></li>
+<li><a class="reference internal" href="#packing-und-unpacking">Packing und Unpacking</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Vorheriges Thema</h4>
   <p class="topless"><a href="control_flow.html"
                         title="vorheriges Kapitel">Kontrollfluss</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="errors.html"
+                        title="nächstes Kapitel">Fehler</a></p>
   <div role="note" aria-label="source link">
     <h3>Diese Seite</h3>
     <ul class="this-page-menu">
@@ -198,6 +257,9 @@ Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie die
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Stichwortverzeichnis"
              >Index</a></li>
+        <li class="right" >
+          <a href="errors.html" title="Fehler"
+             >weiter</a> |</li>
         <li class="right" >
           <a href="control_flow.html" title="Kontrollfluss"
              >zurück</a> |</li>
