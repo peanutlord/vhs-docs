@@ -3,6 +3,9 @@
 Funktionen
 ==========
 
+Aufbau
+------
+
     Don't repeat yourself (DRY)
 
 Wie in einem guten Buch, sollte die gewünschte Information genau einmal auftauchen und nicht x Mal an x Stellen (gilt auch für Romane).
@@ -48,7 +51,7 @@ Normalerweise müssen Argumente in der Reihenfolge hineingegeben werden, wie die
     result = add(10, 10)
     print(result)
 
-Aber auch hier gibt es die berühmte Ausnahme. Durch Angabe des Namens können wir Argumente in beliebiger Reihenfolge adressen:
+Aber auch hier gibt es die berühmte Ausnahme. Durch Angabe des Namens können wir Argumente in beliebiger Reihenfolge einsetzen:
 
 .. code-block:: python
 
@@ -139,3 +142,8 @@ Funktionen können auch sich selbst aufrufen (rekursiver aufruf):
     # 21
     # 34
 
+Packing und Unpacking
+---------------------
+
+Argumente müssen in der gleichen Anzahl und (wenn nicht der ``name`` benutzt wird) in der gleichen Reihenfolge angegeben werden.
+Es gibt jedoch die Möglichkeit
