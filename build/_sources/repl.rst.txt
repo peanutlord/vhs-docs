@@ -3,6 +3,22 @@
 Interaktiver Modus
 ==================
 
+Python Script ausführen
+-----------------------
+
+Um ein Python Script auszuführen, benutzt man das ``python`` cmd
+
+.. code-block:: bash
+
+    python my_script.py
+
+Um ein Python Script auszuführen im interaktiven Modus (man behalt den "state" des scriptes),
+kann man das ``-i`` Argument benutzen:
+
+.. code-block:: bash
+
+    python -i my_script.py
+
 REPL starten
 ------------
 
