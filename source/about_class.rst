@@ -9,7 +9,7 @@ Der Dozent
 .. code-block:: python
 
   print("Christopher Marchfelder")
-  print("Lead Backend Engineer bei sennder")
+  print("Engineering Manager bei sennder")
   print("Seit 20 Jahren immer hinter irgendeiner Mattscheibe")
 
   why = """

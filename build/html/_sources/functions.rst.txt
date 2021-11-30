@@ -180,3 +180,14 @@ Oft findet man dieses Muster in Python code:
 
     def something(a, b, *args, **kwargs):
         pass
+
+Das ganze funktioniert auch in die "andere Richtung":
+
+.. code-block:: python
+
+    for i in range(0, 10):
+        print(i)
+
+    args = [0, 10]
+    for i in range(*args):
+        print(i)

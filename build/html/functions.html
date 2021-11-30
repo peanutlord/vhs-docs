@@ -6,19 +6,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Funktionen &#8212; Grundkurs Python 0.0.1 Dokumentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/translations.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="Fehler" href="errors.html" />
     <link rel="prev" title="Kontrollfluss" href="control_flow.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,6 +26,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Stichwortverzeichnis"
              accesskey="I">Index</a></li>
+        <li class="right" >
+          <a href="errors.html" title="Fehler"
+             accesskey="N">weiter</a> |</li>
         <li class="right" >
           <a href="control_flow.html" title="Kontrollfluss"
              accesskey="P">zurück</a> |</li>
@@ -192,6 +194,15 @@ Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlau
     <span class="k">pass</span>
 </pre></div>
 </div>
+<p>Das ganze funktioniert auch in die „andere Richtung“:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -214,6 +225,9 @@ Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlau
   <h4>Vorheriges Thema</h4>
   <p class="topless"><a href="control_flow.html"
                         title="vorheriges Kapitel">Kontrollfluss</a></p>
+  <h4>Nächstes Thema</h4>
+  <p class="topless"><a href="errors.html"
+                        title="nächstes Kapitel">Fehler</a></p>
   <div role="note" aria-label="source link">
     <h3>Diese Seite</h3>
     <ul class="this-page-menu">
@@ -242,6 +256,9 @@ Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlau
           <a href="genindex.html" title="Stichwortverzeichnis"
              >Index</a></li>
         <li class="right" >
+          <a href="errors.html" title="Fehler"
+             >weiter</a> |</li>
+        <li class="right" >
           <a href="control_flow.html" title="Kontrollfluss"
              >zurück</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Grundkurs Python 0.0.1 Dokumentation</a> &#187;</li>
@@ -250,7 +267,7 @@ Es existieren jedoch Situationen, in denen ich dem Benutzer einer Funktion erlau
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Christopher Marchfelder.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>
