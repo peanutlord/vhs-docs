@@ -45,8 +45,8 @@
   <div class="section" id="listen">
 <h1>Listen<a class="headerlink" href="#listen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Eine Liste ist eine (veränderbare) Sequenz, die typischerweise eine Sammlung von homogenen Daten beinhaltet:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Liste erzeugen</span><a class="headerlink" href="#id3" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Liste erzeugen</span><a class="headerlink" href="#id1" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
 
  <span class="c1"># Alternative, but slower (yet sometimes required ;) ):</span>
@@ -65,8 +65,8 @@
 </div>
 </div>
 <p>Einzelne Elemente in einer Liste können über ihren Schlüssel ausgewählt werden. Dieser Schlüssel ist auch sequenziell, beginnend bei der <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Einzelne Elemente aus der Liste auswählen</span><a class="headerlink" href="#id4" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Einzelne Elemente aus der Liste auswählen</span><a class="headerlink" href="#id2" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;are&quot;</span><span class="p">,</span> <span class="s2">&quot;you?&quot;</span><span class="p">]</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Hello</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># class</span>
@@ -75,8 +75,8 @@
 </div>
 </div>
 <p>Einem Schlüssel kann auch ein neuer Wert zugewiesen werden:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Einzelne Elemente aus der Liste überschreiben</span><a class="headerlink" href="#id5" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Einzelne Elemente aus der Liste überschreiben</span><a class="headerlink" href="#id3" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;are&quot;</span><span class="p">,</span> <span class="s2">&quot;you?&quot;</span><span class="p">]</span>
  <span class="n">lst</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Robert&quot;</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
@@ -84,8 +84,8 @@
 </div>
 </div>
 <p>Listen können auch nach der Erzeugung erweitert oder sortiert werden:</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">List erweitern</span><a class="headerlink" href="#id6" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">List erweitern</span><a class="headerlink" href="#id4" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
  <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
  <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -97,8 +97,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">List sortieren</span><a class="headerlink" href="#id7" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">List sortieren</span><a class="headerlink" href="#id5" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
  <span class="n">lst</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
@@ -108,8 +108,8 @@
 </div>
 <p><strong>Hinweis</strong>: Die Befehle <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code> und <code class="docutils literal notranslate"><span class="pre">sort</span></code> <strong>mutieren</strong> die Liste, d.h. sie verändert ihren Zustand (engl. mutable).</p>
 <p>Um eine Liste zu kopieren, gibt es zwei Möglichkeiten:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">List kopieren</span><a class="headerlink" href="#id8" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">List kopieren</span><a class="headerlink" href="#id6" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
  <span class="n">lst2</span> <span class="o">=</span> <span class="n">lst</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
@@ -119,8 +119,8 @@
 </div>
 </div>
 <p>Python besitzt die Möglichkeit, Listen zu schneiden (engl. slicen). Damit können subsets von Listen erstellt werden, Elemente ersetzt oder gar ganz entfernt werden. Es wird jedes Mal eine neue Liste zurückgeliefert.</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id9" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id7" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
  <span class="n">subset</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>  <span class="c1"># [1, 2, 3]</span>
@@ -137,25 +137,25 @@
 </div>
 </div>
 <p>Um die Länger einer Liste herauszufinden, können wir einfach <code class="docutils literal notranslate"><span class="pre">len</span></code> benutzen:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id10" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id8" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
  <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>  <span class="c1"># 3</span>
 </pre></div>
 </div>
 </div>
-<p>Wir können auch sehr einfach die Summe einer Liste kriegen (vorrausgesetzt, sie besteht nur aus <a href="#id1"><span class="problematic" id="id2">``</span></a>int``s)</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Sum</span><a class="headerlink" href="#id11" title="Link zu diesem Quellcode">¶</a></div>
+<p>Wir können auch sehr einfach die Summe einer Liste kriegen (vorrausgesetzt, sie besteht nur aus <code class="docutils literal notranslate"><span class="pre">int</span></code>)</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Sum</span><a class="headerlink" href="#id9" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <p><strong>Hinweis</strong> Wir hatten bereits von „Zeichenketten“ gesprochen. Diese sind eine Liste von Zeichen und verhalten sich auch manchmal so (<code class="docutils literal notranslate"><span class="pre">len</span></code> ist benutzbar, können gesliced werden und durch Schleifen verarbeitet)</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id12" title="Link zu diesem Quellcode">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">List subset</span><a class="headerlink" href="#id10" title="Link zu diesem Quellcode">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">something</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">something</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># &quot;Hello&quot;</span>
 

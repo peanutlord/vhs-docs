@@ -6,7 +6,7 @@ Der Computer
 * Eine Rechenanlage, die sequentiell Befehle abarbeitet
 * Ein Betriebssystem hat mehrere "Schichten". Höhere Schichten sind weiter weg von der Hardware. Zur Kommunikation mit der Hardware müssen die Befehle also nach unten durchgereicht werden
 
-  * Python arbeitet auf den höcheren Schichten. Das erklärt auch warum es langsamer ist - es gibt mehr "handoffs" an andere
+  * Python arbeitet auf den höheren Schichten. Das erklärt auch warum es langsamer ist - es gibt mehr "handoffs" an andere
 
 * Es gibt Hardwarenahe Sprachen, zum Bsp Assembly, und Hardwareferne Sprachen, wie C/C++, Rust, Java. Auch Python zählt zu letzerem
 

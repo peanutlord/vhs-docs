@@ -119,7 +119,7 @@ Um die Länger einer Liste herauszufinden, können wir einfach ``len`` benutzen:
     length = len(lst)
     print(length)  # 3
 
-Wir können auch sehr einfach die Summe einer Liste kriegen (vorrausgesetzt, sie besteht nur aus ``int``s)
+Wir können auch sehr einfach die Summe einer Liste kriegen (vorrausgesetzt, sie besteht nur aus ``int``)
 
 .. code-block:: python
    :caption: Sum
